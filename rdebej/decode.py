@@ -288,7 +288,7 @@ def get_entry_by_seq(schema_dict, annot_dict, seq, selector, entries_by_seq, ent
     dict_to_use = schema_dict if selector is BEJ_DICTIONARY_SELECTOR_MAJOR_SCHEMA else annot_dict
 
     # if we are changing dictionary context, we need to load entries for the new dictionary
-    if entries_by_seq_selector != selector:
+    if entries_by_seq_selector != selector and selector != BEJ_DICTIONARY_SELECTOR_MAJOR_SCHEMA:
         base_entry = DictionaryByteArrayStream(dict_to_use, 0, -1).get_next_entry()
         entries_by_seq = load_dictionary_subset_by_key_sequence(dict_to_use,
                                                                 base_entry[DICTIONARY_ENTRY_OFFSET],

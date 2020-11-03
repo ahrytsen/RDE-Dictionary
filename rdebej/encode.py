@@ -482,8 +482,7 @@ def bej_encode_stream(output_stream, json_data, schema_dict, annot_dict, dict_to
 
             else:
                 entry = dict_entries[prop]
-                dictionary_selector_bit_value = BEJ_DICTIONARY_SELECTOR_MAJOR_SCHEMA \
-                    if dict_to_use == schema_dict else BEJ_DICTIONARY_SELECTOR_ANNOTATION
+                dictionary_selector_bit_value = BEJ_DICTIONARY_SELECTOR_MAJOR_SCHEMA
                 prop_format = entry[DICTIONARY_ENTRY_FORMAT]
 
             sequence_number_with_dictionary_selector = (entry[DICTIONARY_ENTRY_SEQUENCE_NUMBER] << 1) \
